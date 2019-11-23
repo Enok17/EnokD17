@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+	  
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MURAL SI</title>
+</h:head>
+<h:body>
+
+	<h1>Página do Coordenador</h1>
+	<h2>Inclusão de Disciplinas</h2>
+
+	<h:form>
+		<h:panelGrid columns="3">
+			
+			<h:outputLabel value="Nome:" for="nome" />
+			<h:inputText id= "nome"
+				value="#{disciplinaControlador.disciplina.nome}" required="true" 
+				requiredMessage="Nome é obrigatório!" >
+			</h:inputText>
+			
+			<h:message for="nome" />
+			
+			<h:outputLabel value="Professor:" for="prof" />
+			<h:selectOneMenu id="prof" 
+				value="#{disciplinaControlador.disciplina.prof}"
+				required="true" converter="professorConversor"
+				requiredMessage="Professor é obrigatório!"
+				converterMessage="Erro na conversão">
+				<f:selectItem noSelectionOption="true" itemLabel="--Selecione--"/>
+				<f:selectItems value="#{disciplinaControlador.professores}" var="prof"
+					itemValue="#{prof}"
+					itemLabel="#{prof.nome}"/>
+			</h:selectOneMenu>	
+			
+			<h:message for="prof" />
+			
+		</h:panelGrid>
+		
+		<h:commandButton value="Confirmar" 
+			action="#{disciplinaControlador.adicionar}" />
+		<h:commandButton value="Cancelar" 
+			action="disciplinasGerenciamento" immediate="true" />
+			
+	</h:form>
+
+
+</h:body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MURAL SI</title>
+</h:head>
+<h:body>
+
+	<h1>Página do Coordenador</h1>
+	<h2>Gerenciamento da Grade Curricular</h2>
+	<h3>#{coordenadorControlador.coordenador.nome}</h3>
+
+	<h:form>
+
+		<h:outputLabel value="Chave:" for="chave" />
+		<h:inputText id="chave" value="#{gradeCurricularControlador.chave}" />
+
+		<h:outputLabel value="Período:" for="chaveP" />
+		<h:selectOneMenu id="chaveP" value="#{gradeCurricularControlador.chaveP}">
+			<f:selectItem itemValue="1" itemLabel="1º" />
+			<f:selectItem itemValue="2" itemLabel="2º" />
+			<f:selectItem itemValue="3" itemLabel="3º" />
+			<f:selectItem itemValue="4" itemLabel="4º" />
+			<f:selectItem itemValue="5" itemLabel="5º" />
+			<f:selectItem itemValue="6" itemLabel="6º" />
+			<f:selectItem itemValue="7" itemLabel="7º" />
+			<f:selectItem itemValue="8" itemLabel="8º" />
+		</h:selectOneMenu>
+		
+		<h:commandButton action="null" value="Buscar" />
+		
+		<h:commandButton value="Incluir" action="#{gradeCurricularControlador.incluir}" />
+		
+		<h:commandButton value="Voltar" action="coordenadorPrincipal" />
+
+		<h:dataTable value="#{gradeCurricularControlador.grade}"
+			var="grade" border="3">
+			<h:column>
+				<f:facet name="header">Código</f:facet>
+					#{grade.codigo}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+					#{grade.nome}
+			</h:column>
+			<h:column>
+				<f:facet name="header">CH</f:facet>
+					#{grade.cargaHoraria}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Pré-Requisito</f:facet>
+					#{grade.preRequisito}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Período</f:facet>
+					#{grade.periodo}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Operações</f:facet>
+				<h:commandButton value="Editar" 
+					action="#{gradeCurricularControlador.editar(grade)}"/>
+				<h:commandButton value="Excluir" 
+					action="#{gradeCurricularControlador.excluir(grade)}"/>	
+			</h:column>
+		</h:dataTable>
+
+	</h:form>
+
+
+</h:body>
+</html>

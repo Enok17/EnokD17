@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MURAL SI</title>
+</h:head>
+<h:body>
+
+	<h1>MURAL SI</h1>
+	<h2>Página do Aluno</h2>
+
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel value="Matrícula:" for="matricula" />
+			<h:inputText id="matricula" value="#{alunoControlador.login}" required="true" 
+				requiredMessage="O campo matrícula é obrigatório!"
+				converterMessage="Matrícula deve ser numérica!"/>
+				
+			<h:message for="matricula" />
+			
+			<h:outputLabel value="Senha:" for="senha" />
+			<h:inputSecret id="senha" value="#{alunoControlador.senha}" required="true"
+				requiredMessage="O campo senha é obrigatório!"/>
+				
+			<h:message for="senha" />
+			
+			<h:commandButton value="Entrar" 
+			action="#{alunoControlador.alunoLogin}"  />
+			<h:commandButton value="Cadastrar" 
+			action="#{alunoControlador.incluir}" immediate="true"/>
+			
+			
+		</h:panelGrid>
+		
+		<h:commandButton value="Voltar" action="index" immediate="true"/>
+		
+	</h:form>
+
+
+</h:body>
+</html>

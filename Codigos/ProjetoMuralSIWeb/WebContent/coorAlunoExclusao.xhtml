@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MURAL SI</title>
+</h:head>
+<h:body>
+
+	<h1>Página do Coordenador</h1>
+	<h2>Exclusão de Aluno</h2>
+
+	<h:form>
+	
+		<h:panelGrid columns="2">
+		
+			<h:outputLabel value="Matrícula:" for="matricula" />
+			<h:inputText id= "matricula" disabled="true"
+				value="#{alunoControlador.aluno.matricula}">
+			</h:inputText>
+			
+			<h:outputLabel value="Nome:" for="nome" />
+			<h:inputText id= "nome" disabled="true"
+				value="#{alunoControlador.aluno.nome}">
+			</h:inputText>
+			
+			<h:outputLabel value="Período:" for="periodo" />
+			<h:inputText id="periodo" disabled="true"
+				value="#{alunoControlador.aluno.periodo}" >
+			</h:inputText>
+				
+			<h:outputLabel value="Senha:" for="senha" />
+			<h:inputText id="senha" disabled="true"
+				value="#{alunoControlador.aluno.senha }"> 
+			</h:inputText>
+		
+		</h:panelGrid>
+	
+		<h:commandButton value="Confirmar" 
+			action="#{alunoControlador.removerComoCoordenador}" />
+		<h:commandButton value="Cancelar" 
+			action="alunosGerenciamento" immediate="true" />
+	
+	</h:form>
+
+
+</h:body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MURAL SI</title>
+</h:head>
+<h:body>
+
+	<h1>Página do Aluno</h1>
+	<h2>Notificações</h2>
+	<h3>#{alunoControlador.aluno.nome}</h3>
+
+	<h:form>
+
+		<h:outputLabel value="Chave:" for="chave" />
+		<h:inputText id="chave" value="#{notificacaoControlador.chave}" />
+
+		<h:outputLabel value="Período:" for="chaveP" />
+		<h:selectOneMenu id="chaveP" value="#{notificacaoControlador.chaveP}">
+			<f:selectItem itemValue="1" itemLabel="1º" />
+			<f:selectItem itemValue="2" itemLabel="2º" />
+			<f:selectItem itemValue="3" itemLabel="3º" />
+			<f:selectItem itemValue="4" itemLabel="4º" />
+			<f:selectItem itemValue="5" itemLabel="5º" />
+			<f:selectItem itemValue="6" itemLabel="6º" />
+			<f:selectItem itemValue="7" itemLabel="7º" />
+			<f:selectItem itemValue="8" itemLabel="8º" />
+			<f:selectItem itemValue="0" itemLabel="Todos"/>
+		</h:selectOneMenu>
+		
+		<h:commandButton action="null" value="Buscar" />
+
+		<h:commandButton value="Voltar" action="alunoPrincipal" />
+
+		<h:dataTable value="#{notificacaoControlador.nomeEPeriodo}"
+			var="notificacao" border="3">
+			<h:column>
+				<f:facet name="header">Título</f:facet>
+					#{notificacao.titulo}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Mensagem</f:facet>
+					#{notificacao.mensagem}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Data</f:facet>
+					#{notificacao.data}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Período</f:facet>
+					#{notificacao.periodo}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Prof/Coor</f:facet>
+					#{notificacao.prof.nome}
+					#{notificacao.coor.nome}
+			</h:column>
+
+		</h:dataTable>
+
+	</h:form>
+
+
+</h:body>
+</html>

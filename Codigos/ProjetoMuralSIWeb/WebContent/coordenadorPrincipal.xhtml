@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MURAL SI</title>
+</h:head>
+<h:body>
+
+	<h1>Página do Coordenador</h1>
+	<h2>Ações</h2>
+	<h3>#{coordenadorControlador.coordenador.nome}</h3>
+
+	<h:form>
+	<ul>
+		<li><h:link value="Gerenciar Alunos" outcome="alunosGerenciamento" /></li>
+		<li><h:link value="Gerenciar Professores" outcome="professoresGerenciamento" /></li>
+	</ul>
+	<ul>
+		<li><h:link value="Gerenciar Notificações" outcome="notificacoesGerenciamento" /></li>
+		<li><h:link value="Gerenciar Disciplinas" outcome="disciplinasGerenciamento" /></li>
+		<li><h:link value="Gerenciar Grade Curricular" outcome="gradeGerenciamento" /></li>
+	</ul>
+	
+	<h:commandButton value="Sair" action="#{coordenadorControlador.coordenadorLogout}" />
+	
+	</h:form>
+
+
+</h:body>
+</html>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+	  <!--xmlns:p="http://primefaces.org/ui"> -->
+	  
+	  
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MURAL SI</title>
+</h:head>
+<h:body>
+
+	<h1>Página do Coordenador</h1>
+	<h2>Inclusão de Notificações</h2>
+
+	<h:form>
+		
+		<h:panelGrid columns="3">
+			
+			<h:outputLabel value="Título:" for="titulo" />
+			<h:inputText id= "titulo"
+				value="#{notificacaoControlador.notificacao.titulo}" required="true" 
+				requiredMessage="Título é obrigatório!" >
+			</h:inputText>
+			
+			<h:message for="titulo" />
+			
+			<h:outputLabel value="Mensagem:" for="mensagem" />
+			<h:inputTextarea id= "mensagem"
+				value="#{notificacaoControlador.notificacao.mensagem}" required="true"
+				requiredMessage="Mensagem é obrigatório!">
+			</h:inputTextarea>
+			
+			<h:message for="mensagem" />
+			
+			<h:outputLabel value="Período:" for="periodo" />
+			<h:selectOneMenu id= "periodo"
+				value="#{notificacaoControlador.notificacao.periodo}" required="true" 
+				requiredMessage="Período é obrigatório!" >
+				<f:selectItem noSelectionOption="true" itemLabel="--Selecione--" />
+				<f:selectItem itemValue="1" itemLabel="1º" />
+				<f:selectItem itemValue="2" itemLabel="2º" />
+				<f:selectItem itemValue="3" itemLabel="3º" />
+				<f:selectItem itemValue="4" itemLabel="4º" />
+				<f:selectItem itemValue="5" itemLabel="5º" />
+				<f:selectItem itemValue="6" itemLabel="6º" />
+				<f:selectItem itemValue="7" itemLabel="7º" />
+				<f:selectItem itemValue="8" itemLabel="8º" />
+			</h:selectOneMenu>
+			
+			<h:message for="periodo"/>
+			
+			<h:outputLabel value="Coordenador:" for="coor" />
+			<h:inputText id= "coor" readonly="true"
+				value="#{notificacaoControlador.notificacao.coor.nome}">
+			</h:inputText>
+				
+			<h:message for="coor" />
+				
+			<h:outputLabel value="Data:" for="data" />
+			<h:inputText id= "data"
+				value="#{notificacaoControlador.notificacao.data}" required="true"
+				requiredMessage="Data é obrigatório!">
+			</h:inputText>
+			
+			<h:message for="data" />
+			
+		</h:panelGrid>
+		
+		<h:commandButton value="Confirmar" 
+			action="#{notificacaoControlador.adicionarComoCoordenador}" />
+		<h:commandButton value="Cancelar" 
+			action="notificacoesGerenciamento" immediate="true" />
+	
+	</h:form>
+
+
+</h:body>
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+	  <!--xmlns:p="http://primefaces.org/ui"> -->
+	  
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MURAL SI</title>
+</h:head>
+<h:body>
+
+	<h1>Página do Coordenador</h1>
+	<h2>Exclusão na Grade Curricular</h2>
+
+	<h:form>
+		
+		<h:panelGrid columns="2">
+			
+			<h:outputLabel value="Código:" for="codigo" />
+			<h:inputText id= "codigo" readonly="true"
+				value="#{gradeCurricularControlador.gradeCurricular.codigo}">
+			</h:inputText>
+			
+			<h:outputLabel value="Nome:" for="nome" />
+			<h:inputText id= "nome" readonly="true"
+				value="#{gradeCurricularControlador.gradeCurricular.nome}">
+			</h:inputText>
+			
+			<h:outputLabel value="Carga Horária:" for="cargaHoraria" />
+			<h:inputText id="cargaHoraria" readonly="true"
+				value="#{gradeCurricularControlador.gradeCurricular.cargaHoraria}">
+			</h:inputText>
+			
+			<h:outputLabel value="Pré-Requisito:" for="preRequisito" />
+			<h:inputText id="preRequisito" readonly="true"
+				value="#{gradeCurricularControlador.gradeCurricular.preRequisito}">
+			</h:inputText>
+			
+			<h:outputLabel value="Período:" for="periodo" />
+			<h:inputText id="periodo" readonly="true"
+				value="#{gradeCurricularControlador.gradeCurricular.periodo}">
+			</h:inputText>
+			
+			<h:message for="periodo"/>
+			
+		</h:panelGrid>
+	
+		<h:commandButton value="Confirmar" 
+			action="#{gradeCurricularControlador.remover}" />
+		<h:commandButton value="Cancelar" 
+			action="gradeGerenciamento" immediate="true" />
+	
+	</h:form>
+
+
+</h:body>
+</html>

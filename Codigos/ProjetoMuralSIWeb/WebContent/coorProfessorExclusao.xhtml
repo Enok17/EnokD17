@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+	  
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MURAL SI</title>
+</h:head>
+<h:body>
+
+	<h1>Página do Coordenador</h1>
+	<h2>Exclusão de Professor</h2>
+
+	<h:form>
+	
+		<h:panelGrid columns="2">
+		
+			<h:outputLabel value="Nome:" for="nome" />
+			<h:inputText id= "nome" readonly="true"
+				value="#{professorControlador.professor.nome}">
+			</h:inputText>
+		
+			<h:outputLabel value="Curso:" for="curso" />
+			<h:inputText id= "curso" readonly="true"
+				value="#{professorControlador.professor.curso}">
+			</h:inputText>
+		
+		</h:panelGrid>
+		
+		<h:outputLabel value="Dados Usados no Login:" />
+		
+		<h:panelGrid columns="2">
+		
+			<h:outputLabel value="Identificador" for="identificador" />
+			<h:inputText id="identificador" readonly="true"
+				value="#{professorControlador.professor.identificador}"/>
+			
+			<h:outputLabel value="Senha:" for="senha" />
+			<h:inputText id="senha" readonly="true"
+				value="#{professorControlador.professor.senha}"/>
+				
+			
+		</h:panelGrid>
+	
+		<h:commandButton value="Confirmar" 
+			action="#{professorControlador.remover}" />
+		<h:commandButton value="Cancelar" 
+			action="professoresGerenciamento" immediate="true" />
+	
+	</h:form>
+
+
+</h:body>
+</html>

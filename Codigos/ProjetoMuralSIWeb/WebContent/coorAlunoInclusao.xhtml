@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+	  <!--xmlns:p="http://primefaces.org/ui"> -->
+	  
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MURAL SI</title>
+</h:head>
+<h:body>
+
+	<h1>Página do Coordenador</h1>
+	<h2>Cadastro de Aluno</h2>
+
+	<h:form>
+		
+		<h:panelGrid columns="3">
+			
+			<h:outputLabel value="Matrícula:" for="matricula" />
+			<h:inputText id= "matricula"
+				value="#{alunoControlador.aluno.matricula}" required="true" 
+				requiredMessage="Matrícula é obrigatória!" 
+				converterMessage="Matrícula deve ser numérica!" 
+				validatorMessage="A matrícula deve ter 11 números!">
+			</h:inputText>
+			
+			<h:message for="matricula" />
+			
+			<h:outputLabel value="Nome:" for="nome" />
+			<h:inputText id= "nome"
+				value="#{alunoControlador.aluno.nome}" required="true"
+				requiredMessage="Nome é obrigatório!">
+			</h:inputText>
+			
+			<h:message for="nome" />
+			
+			<h:outputLabel value="Período:" for="periodo" />
+			<h:selectOneMenu id= "periodo"
+				value="#{alunoControlador.aluno.periodo}" required="true" 
+				requiredMessage="Período é obrigatório!" >
+				<f:selectItem noSelectionOption="true" itemLabel="--Selecione--" />
+				<f:selectItem itemValue="1" itemLabel="1º" />
+				<f:selectItem itemValue="2" itemLabel="2º" />
+				<f:selectItem itemValue="3" itemLabel="3º" />
+				<f:selectItem itemValue="4" itemLabel="4º" />
+				<f:selectItem itemValue="5" itemLabel="5º" />
+				<f:selectItem itemValue="6" itemLabel="6º" />
+				<f:selectItem itemValue="7" itemLabel="7º" />
+				<f:selectItem itemValue="8" itemLabel="8º" />
+			</h:selectOneMenu>
+			
+			<h:message for="periodo"/>
+				
+			<h:outputLabel value="Senha:" for="senha" />
+			<h:inputText id="senha" 
+				value="#{alunoControlador.aluno.senha }" required="true" 
+				requiredMessage="Senha é obrigatório!"/>
+				
+			<h:message for="senha" />
+			
+		</h:panelGrid>
+	
+		<h:commandButton value="Confirmar" 
+			action="#{alunoControlador.adicionarComoCoordenador}" />
+		<h:commandButton value="Cancelar" 
+			action="alunosGerenciamento" immediate="true" />
+	
+	</h:form>
+
+
+</h:body>
+</html>
