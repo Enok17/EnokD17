@@ -2,11 +2,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>MURAL SI</title>
 </h:head>
 <h:body>
 
@@ -16,26 +16,25 @@
 	<h:form>
 		<h:panelGrid columns="3">
 			<h:outputLabel value="Identificador:" for="identificador" />
-			<h:inputText id="identificador" value="#{coordenadorControlador.login}" 
-				required="true"
-				requiredMessage="O campo identificador é obrigatório!"/>
+			<h:inputText id="identificador"
+				value="#{coordenadorControlador.login}" required="true"
+				requiredMessage="O campo identificador é obrigatório!" />
 			<h:message for="identificador" />
-			
+
 			<h:outputLabel value="Senha:" for="senha" />
-			<h:inputSecret id="senha" value="#{coordenadorControlador.senha}" 
-				required="true"
-				requiredMessage="O campo senha é obrigatório!"/>
+			<h:inputSecret id="senha" value="#{coordenadorControlador.senha}"
+				required="true" requiredMessage="O campo senha é obrigatório!" />
 			<h:message for="senha" />
-			
-		
-			<h:commandButton value="Entrar" 
-			action="#{coordenadorControlador.coordenadorLogin}" />
-			
-			<h:commandButton value="Voltar" action="index" immediate="true"/>
-			
+
+
+			<h:commandButton value="Entrar"
+				action="#{coordenadorControlador.coordenadorLogin}"/>
+
+			<h:commandButton value="Voltar" action="index" immediate="true" />
+
 		</h:panelGrid>
-		
-		
+
+
 	</h:form>
 
 

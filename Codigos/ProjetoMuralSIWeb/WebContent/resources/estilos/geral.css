@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.cabecalho{
+	width: 1px;
+	border: 1px solid;
+	margin: 1px auto;
+}
+
+.conteudo{
+	width: 1px;
+	border: 1px solid;
+	margin: 1px auto;
+}
+
+.rodape{
+	width: 1px;
+	border: 1px solid;
+	margin: 1px auto;
+}
+
+#imagem {
+	background-image: url("/ProjetoMuralSIWeb/WebContent/resources/imagens/muralsi-fundo/muralsi-blue-5.png");
+}

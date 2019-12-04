@@ -5,8 +5,8 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>MURAL SI</title>
 </h:head>
 <h:body>
 
@@ -15,13 +15,13 @@
 	<h3>#{alunoControlador.aluno.nome}</h3>
 
 	<h:form>
-	<ul>
-		<li><h:link value="Notificações" outcome="alunoNotificacoes" /></li>
-		<li><h:link value="Grade Curricular" outcome="alunoGrade" /></li>
-	</ul>
-	
-	<h:commandButton value="Sair" action="#{alunoControlador.alunoLogout}" />
-	
+		<ul>
+			<li><h:link value="Notificações" outcome="alunoNotificacoes" /></li>
+			<li><h:link value="Grade Curricular" outcome="alunoGrade" /></li>
+		</ul>
+
+		<h:commandButton value="Sair" action="#{alunoControlador.alunoLogout}" />
+
 	</h:form>
 
 
