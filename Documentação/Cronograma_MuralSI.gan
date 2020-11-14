@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Cronograma_MuralSI" company="" webLink="http://" view-date="2019-09-08" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.11" locale="pt_BR">
+    <description/>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Nome" width="167" order="0"/>
+        <field id="tpd4" name="Data inicial" width="65" order="1"/>
+        <field id="tpd5" name="Data final" width="64" order="2"/>
+        <option id="color.recent"><![CDATA[#ffff66 #ffff00]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nome" width="210" order="0"/>
+        <field id="1" name="Função" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="38" name="Engenharia de Software 1" color="#8cb6ce" meeting="false" start="2019-09-12" duration="59" complete="0" thirdDate="2020-08-10" thirdDate-constraint="0" expand="true">
+            <task id="40" name="Documentação" color="#ffff66" meeting="false" start="2019-09-12" duration="10" complete="0" thirdDate="2020-08-10" thirdDate-constraint="0" expand="true"/>
+            <task id="41" name="Confecção e apuração de questionários" color="#8cb6ce" meeting="false" start="2019-09-12" duration="3" complete="0" thirdDate="2020-08-10" thirdDate-constraint="0" expand="true"/>
+            <task id="42" name="Codificação" color="#8cb6ce" meeting="false" start="2019-09-16" duration="56" complete="0" thirdDate="2020-08-10" thirdDate-constraint="0" expand="true">
+                <task id="43" name="Criação do banco de dados" color="#8cb6ce" meeting="false" start="2019-09-16" duration="7" complete="0" thirdDate="2020-08-10" thirdDate-constraint="0" expand="true"/>
+                <task id="44" name="Criação do front-end" color="#8cb6ce" meeting="false" start="2019-09-23" duration="20" complete="0" thirdDate="2020-08-10" thirdDate-constraint="0" expand="true"/>
+                <task id="69" name="Integração do BD com o front-end" color="#8cb6ce" meeting="false" start="2019-09-23" duration="50" complete="0" thirdDate="2019-09-16" thirdDate-constraint="0" expand="true"/>
+            </task>
+        </task>
+        <task id="32" name="Engenharia de Software 2" color="#8cb6ce" meeting="false" start="2020-11-17" duration="61" complete="0" thirdDate="2020-11-17" thirdDate-constraint="0" expand="true">
+            <task id="7" name="Documentação" color="#ffff66" meeting="false" start="2020-11-17" duration="61" complete="0" thirdDate="2020-11-13" thirdDate-constraint="0" expand="true"/>
+            <task id="0" name="Revisão de Código" color="#8cb6ce" meeting="false" start="2020-11-18" duration="7" complete="0" thirdDate="2020-11-13" thirdDate-constraint="0" expand="true"/>
+            <task id="12" name="Implementação" color="#8cb6ce" meeting="false" start="2020-11-26" duration="34" complete="0" thirdDate="2020-11-26" thirdDate-constraint="0" expand="true">
+                <task id="14" name="(Re)organização o banco de dados relacional" color="#8cb6ce" meeting="false" start="2020-11-26" duration="20" complete="0" thirdDate="2020-11-13" thirdDate-constraint="0" expand="true"/>
+                <task id="15" name="Ajuste do front-end" color="#8cb6ce" meeting="false" start="2020-12-19" duration="14" complete="0" thirdDate="2020-11-13" thirdDate-constraint="0" expand="true"/>
+            </task>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
