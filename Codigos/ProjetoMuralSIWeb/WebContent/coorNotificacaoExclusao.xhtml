@@ -4,55 +4,93 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:f="http://java.sun.com/jsf/core">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
-</head>
-<h:body>
-
-	<h1>Página do Coordenador</h1>
-	<h2>Exclusão de Notificações</h2>
-
-	<h:form>
-	<h:panelGrid columns="2">
-			
-			<h:outputLabel value="Título:" for="titulo" />
-			<h:inputText id= "titulo" readonly="true"
-				value="#{notificacaoControlador.notificacao.titulo}">
-			</h:inputText>
-			
-			<h:outputLabel value="Mensagem:" for="mensagem" />
-			<h:inputTextarea id= "mensagem" readonly="true"
-				value="#{notificacaoControlador.notificacao.mensagem}">
-			</h:inputTextarea>
-			
-			
-			<h:outputLabel value="Período:" for="periodo" />
-			<h:inputText id= "periodo" readonly="true"
-				value="#{notificacaoControlador.notificacao.periodo}">
-			</h:inputText>
-
-			
-			<h:outputLabel value="Coordenador:" for="coor" />
-			<h:inputText id= "coor" readonly="true"
-				value="#{notificacaoControlador.notificacao.coor.nome}">
-			</h:inputText>
-			
-				
-			<h:outputLabel value="Data:" for="data" />
-			<h:inputText id= "data" readonly="true"
-				value="#{notificacaoControlador.notificacao.data}">
-			</h:inputText>
-			
-		</h:panelGrid>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>MURAL</title>
 		
-		<h:commandButton value="Confirmar" 
-			action="#{notificacaoControlador.removerComoCoordenador(coordenadorControlador.coordenador)}" />
-		<h:commandButton value="Cancelar" 
-			action="notificacoesGerenciamento" immediate="true" />
+		<style>
+			html {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			.titulo {
+				text-align: center;
+				font-size: 64px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			
+			.subtitulo {
+				text-align: center;
+				font-size: 32px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			
+			.card {
+				margin-left: 400px;
+				padding: 10px;
+			}
+			.btn {
+			margin: 10px
+			}
+		</style>
 	
-	</h:form>
-
-
-</h:body>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+		crossorigin="anonymous" />
+		
+	</head>
+	<h:body>
+	
+		<h1 class="titulo">Página do Coordenador</h1>
+		<h2 class="subtitulo">Exclusão de Notificações</h2>
+	
+		<div class="card" style="width: 32rem;">
+			<h:form>
+				<h:panelGrid columns="2">
+					
+					<h:outputLabel value="Título:" for="titulo" class="form-label" />
+					<h:inputText id= "titulo" readonly="true" class="form-control form"
+						value="#{notificacaoControlador.notificacao.titulo}">
+					</h:inputText>
+					
+					<h:outputLabel value="Mensagem:" for="mensagem" class="form-label" />
+					<h:inputTextarea id= "mensagem" readonly="true" class="form-control form"
+						value="#{notificacaoControlador.notificacao.mensagem}">
+					</h:inputTextarea>
+					
+					
+					<h:outputLabel value="Período:" for="periodo" class="form-label" />
+					<h:inputText id= "periodo" readonly="true" class="form-control form"
+						value="#{notificacaoControlador.notificacao.periodo}">
+					</h:inputText>
+		
+					
+					<h:outputLabel value="Coordenador:" for="coor" class="form-label" />
+					<h:inputText id= "coor" readonly="true" class="form-control form"
+						value="#{notificacaoControlador.notificacao.coor.nome}">
+					</h:inputText>
+					
+						
+					<h:outputLabel value="Data:" for="data" class="form-label" />
+					<h:inputText id= "data" readonly="true" class="form-control form"
+						value="#{notificacaoControlador.notificacao.data}">
+					</h:inputText>
+					
+				</h:panelGrid>
+				
+				<h:commandButton class="btn btn-primary" value="Confirmar" 
+					action="#{notificacaoControlador.removerComoCoordenador(coordenadorControlador.coordenador)}" />
+				<h:commandButton class="btn btn-primary" value="Cancelar" 
+					action="notificacoesGerenciamento" immediate="true" />
+			
+			</h:form>
+		</div>
+	
+	</h:body>
 </html>

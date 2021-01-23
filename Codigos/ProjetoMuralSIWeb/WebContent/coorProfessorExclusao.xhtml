@@ -5,53 +5,92 @@
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:f="http://java.sun.com/jsf/core">
 	  
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
-</h:head>
-<h:body>
-
-	<h1>Página do Coordenador</h1>
-	<h2>Exclusão de Professor</h2>
-
-	<h:form>
-	
-		<h:panelGrid columns="2">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>MURAL</title>
 		
-			<h:outputLabel value="Nome:" for="nome" />
-			<h:inputText id= "nome" readonly="true"
-				value="#{professorControlador.professor.nome}">
-			</h:inputText>
-		
-			<h:outputLabel value="Curso:" for="curso" />
-			<h:inputText id= "curso" readonly="true"
-				value="#{professorControlador.professor.curso}">
-			</h:inputText>
-		
-		</h:panelGrid>
-		
-		<h:outputLabel value="Dados Usados no Login:" />
-		
-		<h:panelGrid columns="2">
-		
-			<h:outputLabel value="Identificador" for="identificador" />
-			<h:inputText id="identificador" readonly="true"
-				value="#{professorControlador.professor.identificador}"/>
+		<style>
+			html {
+				font-family: Arial, Helvetica, sans-serif;
+			}
 			
-			<h:outputLabel value="Senha:" for="senha" />
-			<h:inputText id="senha" readonly="true"
-				value="#{professorControlador.professor.senha}"/>
+			.titulo {
+				text-align: center;
+				font-size: 64px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			
+			.subtitulo {
+				text-align: center;
+				font-size: 32px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			
+			.card {
+				margin-left: 400px;
+				padding: 10px;
+			}
+			.btn {
+			margin: 10px
+			}
+		</style>
+	
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+		crossorigin="anonymous" />
+		
+	</h:head>
+	<h:body>
+	
+		<h1 class="titulo">Página do Coordenador</h1>
+		<h2 class="subtitulo">Exclusão de Professor</h2>
+		
+		<div class="card" style="width: 32rem;">
+			<h:form>
+			
+				<h:panelGrid columns="2">
 				
+					<h:outputLabel value="Nome:" for="nome" class="form-label" />
+					<h:inputText id= "nome" readonly="true" class="form-control form"
+						value="#{professorControlador.professor.nome}">
+					</h:inputText>
+				
+					<h:outputLabel value="Curso:" for="curso" class="form-label" />
+					<h:inputText id= "curso" readonly="true" class="form-control form"
+						value="#{professorControlador.professor.curso}">
+					</h:inputText>
+				
+				</h:panelGrid>
+				
+				<h:outputLabel value="Dados Usados no Login:" class="form-label" />
+				
+				<h:panelGrid columns="2">
+				
+					<h:outputLabel value="Identificador" for="identificador" class="form-label" />
+					<h:inputText id="identificador" readonly="true" class="form-control form"
+						value="#{professorControlador.professor.identificador}"/>
+					
+					<h:outputLabel value="Senha:" for="senha" class="form-label" />
+					<h:inputText id="senha" readonly="true" class="form-control form"
+						value="#{professorControlador.professor.senha}"/>
+						
+					
+				</h:panelGrid>
 			
-		</h:panelGrid>
+				<h:commandButton class="btn btn-primary" value="Confirmar" 
+					action="#{professorControlador.remover}" />
+				<h:commandButton class="btn btn-primary" value="Cancelar" 
+					action="professoresGerenciamento" immediate="true" />
+			
+			</h:form>
+		</div>
 	
-		<h:commandButton value="Confirmar" 
-			action="#{professorControlador.remover}" />
-		<h:commandButton value="Cancelar" 
-			action="professoresGerenciamento" immediate="true" />
 	
-	</h:form>
-
-
-</h:body>
+	</h:body>
 </html>

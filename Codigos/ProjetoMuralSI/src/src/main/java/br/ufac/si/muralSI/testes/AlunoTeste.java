@@ -9,7 +9,7 @@ public class AlunoTeste {
 		AlunoGerente ag = new AlunoGerente();
 		Aluno a1;
 		
-		a1 = new Aluno("20170300003", "Enok D", 6, "1234");
+		a1 = new Aluno("40", "Enok D", 6, "1234");
 		
 		ag.adicionar(a1);
 		

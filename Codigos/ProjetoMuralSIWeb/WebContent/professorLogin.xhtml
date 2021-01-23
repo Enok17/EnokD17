@@ -4,37 +4,100 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>MURAL SI</title>
-</h:head>
-<h:body>
-
-	<h1>MURAL SI</h1>
-	<h2>Página do Professor</h2>
-
-	<h:form>
-		<h:panelGrid columns="3">
-
-			<h:outputLabel value="Identificador:" for="identificador" />
-			<h:inputText id="identificador" value="#{professorControlador.login}"
-				required="true"
-				requiredMessage="O campo identificador é obrigatório!" />
-			<h:message for="identificador" />
-
-			<h:outputLabel value="Senha:" for="senha" />
-			<h:inputSecret id="senha" value="#{professorControlador.senha}"
-				required="true" requiredMessage="O campo senha é obrigatório!" />
-			<h:message for="senha" />
-
-			<h:commandButton value="Entrar"
-				action="#{professorControlador.professorLogin}"/>
-
-			<h:commandButton value="Voltar" action="index" immediate="true" />
-		</h:panelGrid>
-
-	</h:form>
-
-
-</h:body>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>MURAL</title>
+		
+		<style>
+			html {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			.titulo {
+				text-align: center;
+				font-size: 64px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			
+			.subtitulo {
+				text-align: center;
+				font-size: 32px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			
+			.card {
+				margin-left: 500px;
+			}
+			
+			.div-login-aluno {
+				margin-top: 40px;
+				float: left;
+			}
+			
+			.div-login-professor {
+				margin-top: 40px;
+				float: right;
+			}
+			.btn{
+				margin-right: 10px;
+			}
+			.btnback{
+				margin-left: 13px;
+			}
+			.anc-esq {
+				float: left;
+			}
+			
+			.anc-dir {
+				float: right;
+			}
+		</style>
+	
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous" />
+		
+		
+	</h:head>
+	<h:body>
+	
+		<h1 class="titulo">MURAL</h1>
+		<h2 class="subtitulo">Página do Professor</h2>
+		
+		<div class="card" style="width: 23rem;">
+			<div class="card-body">
+				<h:form>
+					<div class="mb-3">
+						<h:outputLabel value="Identificador:" for="identificador" />
+						<h:inputText id="identificador" value="#{professorControlador.login}"
+							required="true" class="form-control"
+							requiredMessage="O campo identificador é obrigatório!" />
+						<h:message for="identificador" />
+					</div>
+					<div class="mb-3">
+						<h:outputLabel value="Senha:" for="senha" />
+						<h:inputSecret id="senha" value="#{professorControlador.senha}"
+							required="true" class="form-control"
+							requiredMessage="O campo senha é obrigatório!" />
+						<h:message for="senha" />
+					</div>
+					<br></br>
+					<div class="btn">
+						<h:commandButton value="Entrar" class="btn btn-primary"
+							action="#{professorControlador.professorLogin}"/>
+					</div>
+					<br></br>
+					<h:commandButton class="btn btn-primary btnback" value="Voltar" action="index" immediate="true" />
+			
+				</h:form>
+			</div>
+		</div>
+	
+	</h:body>
 </html>

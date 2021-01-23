@@ -4,31 +4,79 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
-</h:head>
-<h:body>
-
-	<h1>Página do Coordenador</h1>
-	<h2>Ações</h2>
-	<h3>#{coordenadorControlador.coordenador.nome}</h3>
-
-	<h:form>
-	<ul>
-		<li><h:link value="Gerenciar Alunos" outcome="alunosGerenciamento" /></li>
-		<li><h:link value="Gerenciar Professores" outcome="professoresGerenciamento" /></li>
-	</ul>
-	<ul>
-		<li><h:link value="Gerenciar Notificações" outcome="notificacoesGerenciamento" /></li>
-		<li><h:link value="Gerenciar Disciplinas" outcome="disciplinasGerenciamento" /></li>
-		<li><h:link value="Gerenciar Grade Curricular" outcome="gradeGerenciamento" /></li>
-	</ul>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>MURAL</title>
+		
+		<style>
+			html {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			.titulo {
+				text-align: center;
+				font-size: 50px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			
+			.subtitulo {
+				text-align: center;
+				font-size: 32px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			.img{
+				width: 100px;
+			}
+			.btn{
+				width: 80%;
+				margin: 5px 10% 0 10%;
+			}
+		
+		</style>
 	
-	<h:commandButton value="Sair" action="#{coordenadorControlador.coordenadorLogout}" />
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+		crossorigin="anonymous" />
+		
+	</h:head>
+	<h:body>
 	
-	</h:form>
+		<h1 class="titulo">Página do Coordenador</h1>
+		<h2 class="subtitulo">Ações</h2>
+		<div class="card" style="width: 14rem;">
+		  <img src="img/defalt.jpg" class="img" alt="..."></img>
+		  <div class="card-body">
+		    <p class="card-text">#{coordenadorControlador.coordenador.nome}</p>
+		  </div>
+		</div>
+	
+		<h:form>
+			<div class="mb-3">
+				<h:commandButton class="btn btn-primary" value="Gerenciar Alunos"
+				action="alunosGerenciamento"/>
+				<h:commandButton class="btn btn-primary" value="Gerenciar Professores"
+				action="professoresGerenciamento" />
+			</div>
+			
+			<div class="mb-3">
+				<h:commandButton class="btn btn-primary" value="Gerenciar Notificações"
+				action="notificacoesGerenciamento"/>
+				<h:commandButton class="btn btn-primary" value="Gerenciar Disciplinas"
+				action="disciplinasGerenciamento" />
+				<h:commandButton class="btn btn-primary" value="Gerenciar Grade Curricular"
+				action="gradeGerenciamento" />
+			</div>
+
+			<h:commandButton class="btn btn-outline-primary btnback" value="Sair" action="#{coordenadorControlador.coordenadorLogout}" />
+		
+		</h:form>
 
 
-</h:body>
+	</h:body>
 </html>

@@ -7,76 +7,115 @@
 	  <!--xmlns:p="http://primefaces.org/ui"> -->
 	  
 	  
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
-</h:head>
-<h:body>
-
-	<h1>Página do Coordenador</h1>
-	<h2>Inclusão de Notificações</h2>
-
-	<h:form>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>MURAL</title>
 		
-		<h:panelGrid columns="3">
+		<style>
+			html {
+				font-family: Arial, Helvetica, sans-serif;
+			}
 			
-			<h:outputLabel value="Título:" for="titulo" />
-			<h:inputText id= "titulo"
-				value="#{notificacaoControlador.notificacao.titulo}" required="true" 
-				requiredMessage="Título é obrigatório!" >
-			</h:inputText>
+			.titulo {
+				text-align: center;
+				font-size: 64px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
 			
-			<h:message for="titulo" />
+			.subtitulo {
+				text-align: center;
+				font-size: 32px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
 			
-			<h:outputLabel value="Mensagem:" for="mensagem" />
-			<h:inputTextarea id= "mensagem"
-				value="#{notificacaoControlador.notificacao.mensagem}" required="true"
-				requiredMessage="Mensagem é obrigatório!">
-			</h:inputTextarea>
-			
-			<h:message for="mensagem" />
-			
-			<h:outputLabel value="Período:" for="periodo" />
-			<h:selectOneMenu id= "periodo"
-				value="#{notificacaoControlador.notificacao.periodo}" required="true" 
-				requiredMessage="Período é obrigatório!" >
-				<f:selectItem noSelectionOption="true" itemLabel="--Selecione--" />
-				<f:selectItem itemValue="1" itemLabel="1º" />
-				<f:selectItem itemValue="2" itemLabel="2º" />
-				<f:selectItem itemValue="3" itemLabel="3º" />
-				<f:selectItem itemValue="4" itemLabel="4º" />
-				<f:selectItem itemValue="5" itemLabel="5º" />
-				<f:selectItem itemValue="6" itemLabel="6º" />
-				<f:selectItem itemValue="7" itemLabel="7º" />
-				<f:selectItem itemValue="8" itemLabel="8º" />
-			</h:selectOneMenu>
-			
-			<h:message for="periodo"/>
-			
-			<h:outputLabel value="Coordenador:" for="coor" />
-			<h:inputText id= "coor" readonly="true"
-				value="#{notificacaoControlador.notificacao.coor.nome}">
-			</h:inputText>
-				
-			<h:message for="coor" />
-				
-			<h:outputLabel value="Data:" for="data" />
-			<h:inputText id= "data"
-				value="#{notificacaoControlador.notificacao.data}" required="true"
-				requiredMessage="Data é obrigatório!">
-			</h:inputText>
-			
-			<h:message for="data" />
-			
-		</h:panelGrid>
-		
-		<h:commandButton value="Confirmar" 
-			action="#{notificacaoControlador.adicionarComoCoordenador}" />
-		<h:commandButton value="Cancelar" 
-			action="notificacoesGerenciamento" immediate="true" />
+			.card {
+				margin-left: 400px;
+				padding: 10px;
+			}
+			.btn {
+			margin: 10px
+			}
+		</style>
 	
-	</h:form>
-
-
-</h:body>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+		crossorigin="anonymous" />
+		
+	</h:head>
+	<h:body>
+	
+		<h1 class="titulo">Página do Coordenador</h1>
+		<h2 class="subtitulo">Inclusão de Notificações</h2>
+	
+		<div class="card" style="width: 32rem;">
+			<h:form>
+				
+				<h:panelGrid columns="3">
+					
+					<h:outputLabel value="Título:" for="titulo" class="form-label" />
+					<h:inputText id= "titulo" class="form-control form"
+						value="#{notificacaoControlador.notificacao.titulo}" required="true" 
+						requiredMessage="Título é obrigatório!" >
+					</h:inputText>
+					
+					<h:message for="titulo" />
+					
+					<h:outputLabel value="Mensagem:" for="mensagem" class="form-label" />
+					<h:inputTextarea id= "mensagem" class="form-control form"
+						value="#{notificacaoControlador.notificacao.mensagem}" required="true"
+						requiredMessage="Mensagem é obrigatório!">
+					</h:inputTextarea>
+					
+					<h:message for="mensagem" />
+					
+					<h:outputLabel value="Período:" for="periodo" class="form-label" />
+					<h:selectOneMenu id= "periodo" class="form-control form"
+						value="#{notificacaoControlador.notificacao.periodo}" required="true" 
+						requiredMessage="Período é obrigatório!" >
+						<f:selectItem noSelectionOption="true" itemLabel="--Selecione--" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<f:selectItem itemValue="3" itemLabel="3º" />
+						<f:selectItem itemValue="4" itemLabel="4º" />
+						<f:selectItem itemValue="5" itemLabel="5º" />
+						<f:selectItem itemValue="6" itemLabel="6º" />
+						<f:selectItem itemValue="7" itemLabel="7º" />
+						<f:selectItem itemValue="8" itemLabel="8º" />
+					</h:selectOneMenu>
+					
+					<h:message for="periodo"/>
+					
+					<h:outputLabel value="Coordenador:" for="coor" class="form-label" />
+					<h:inputText id= "coor" readonly="true" class="form-control form"
+						value="#{notificacaoControlador.notificacao.coor.nome}">
+					</h:inputText>
+						
+					<h:message for="coor" />
+						
+					<h:outputLabel value="Data:" for="data" class="form-label" />
+					<h:inputText id= "data" class="form-control form"
+						value="#{notificacaoControlador.notificacao.data}" required="true"
+						requiredMessage="Data é obrigatório!">
+					</h:inputText>
+					
+					<h:message for="data" />
+					
+				</h:panelGrid>
+				
+				<h:commandButton class="btn btn-primary" value="Confirmar" 
+					action="#{notificacaoControlador.adicionarComoCoordenador}" />
+				<h:commandButton class="btn btn-primary" value="Cancelar" 
+					action="notificacoesGerenciamento" immediate="true" />
+			
+			</h:form>
+		</div>
+	
+	
+	</h:body>
 </html>

@@ -4,73 +4,136 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
-</h:head>
-<h:body>
-
-	<h1>Página do Coordenador</h1>
-	<h2>Gerenciamento de Notificações</h2>
-	<h3>#{coordenadorControlador.coordenador.nome}</h3>
-
-	<h:form>
-		<h:outputLabel value="Chave:" for="chave" />
-		<h:inputText id="chave" value="#{notificacaoControlador.chave}" />
-
-		<h:outputLabel value="Período:" for="chaveP" />
-		<h:selectOneMenu id="chaveP" value="#{notificacaoControlador.chaveP}">
-			<f:selectItem itemValue="1" itemLabel="1º" />
-			<f:selectItem itemValue="2" itemLabel="2º" />
-			<f:selectItem itemValue="3" itemLabel="3º" />
-			<f:selectItem itemValue="4" itemLabel="4º" />
-			<f:selectItem itemValue="5" itemLabel="5º" />
-			<f:selectItem itemValue="6" itemLabel="6º" />
-			<f:selectItem itemValue="7" itemLabel="7º" />
-			<f:selectItem itemValue="8" itemLabel="8º" />
-			<f:selectItem itemValue="0" itemLabel="Todos" />
-		</h:selectOneMenu>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>MURAL</title>
 		
-		<h:commandButton action="null" value="Buscar" />
+		<style>
+			html {
+    			font-family: Arial, Helvetica, sans-serif;
+			}
+			.btn{
+			    margin: 0 0 2px 10px;
+			}
+			.titulo{
+			    text-align: center;
+			    font-size: 64px;
+			    color: #0d6efd;
+			    margin-top: 30px;
+			    margin-bottom: 30px;
+			}
+			.subtitulo {
+				text-align: center;
+				font-size: 32px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			.card {
+				margin-bottom: 10px;
+			}
+			.form{
+				margin-left: 10px;
+			}
+			.table-notificacoes {
+			    border-collapse: collapse;
+			    width: 90%;
+			    margin: auto;
+			}
+			.table-notificacoes th{
+			    background-color: #0d6efd;
+			    border:  solid 1.5px #fff;
+			    color: #fff;
+			    padding: 15px;
+			}
+			
+			.table-notificacoes td{
+			    background-color: #fff;
+			    border: solid 1px #0d6efd;
+			    color: #0d6efd;
+			    text-align: center;
+			    padding: 10px;
+			}
+		</style>
 		
-		<h:commandButton value="Incluir" action="#{notificacaoControlador.incluirComoCoordenador(coordenadorControlador.coordenador)}" />
-
-		<h:commandButton value="Voltar" action="coordenadorPrincipal" />
-
-		<h:dataTable value="#{notificacaoControlador.nomeEPeriodo}"
-			var="notificacao" border="3">
-			<h:column>
-				<f:facet name="header">Título</f:facet>
-					#{notificacao.titulo}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Mensagem</f:facet>
-					#{notificacao.mensagem}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Data</f:facet>
-					#{notificacao.data}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Período</f:facet>
-					#{notificacao.periodo}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Prof/Coor</f:facet>
-					#{notificacao.prof.nome}
-					#{notificacao.coor.nome}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Operações</f:facet>
-				<h:commandButton value="Editar" 
-					action="#{notificacaoControlador.editarComoCoordenador(notificacao)}" />
-				<h:commandButton value="Excluir" 
-					action="#{notificacaoControlador.excluirComoCoordenador(notificacao)}" />					
-			</h:column>			
-
-		</h:dataTable>
-
-	</h:form>
-
-</h:body>
+		<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+		crossorigin="anonymous" />
+		
+	</h:head>
+	<h:body>
+	
+		<h1 class="titulo">Página do Coordenador</h1>
+		<h2 class="subtitulo">Gerenciamento de Notificações</h2>
+		<div class="card" style="width: 18rem;">
+		  <div class="card-body">
+		    <p class="card-text">#{coordenadorControlador.coordenador.nome}</p>
+		  </div>
+		</div>
+	
+		<h:form>
+			<center>
+				<h:outputLabel value="Chave:" for="chave" class="form-label form" />
+				<h:inputText id="chave" value="#{notificacaoControlador.chave}" />
+		
+				<h:outputLabel value="Período:" for="chaveP" class="form-label form" />
+				<h:selectOneMenu id="chaveP" value="#{notificacaoControlador.chaveP}" class="btn btn-primary">
+					<f:selectItem itemValue="1" itemLabel="1º" />
+					<f:selectItem itemValue="2" itemLabel="2º" />
+					<f:selectItem itemValue="3" itemLabel="3º" />
+					<f:selectItem itemValue="4" itemLabel="4º" />
+					<f:selectItem itemValue="5" itemLabel="5º" />
+					<f:selectItem itemValue="6" itemLabel="6º" />
+					<f:selectItem itemValue="7" itemLabel="7º" />
+					<f:selectItem itemValue="8" itemLabel="8º" />
+					<f:selectItem itemValue="0" itemLabel="Todos" />
+				</h:selectOneMenu>
+				
+				<h:commandButton action="null" value="Buscar" class="btn btn-primary" />
+				
+				<h:commandButton value="Incluir" class="btn btn-primary"
+				action="#{notificacaoControlador.incluirComoCoordenador(coordenadorControlador.coordenador)}" />
+		
+				<h:commandButton value="Voltar" class="btn btn-primary"
+				action="coordenadorPrincipal" />
+			</center>
+	
+			<h:dataTable value="#{notificacaoControlador.nomeEPeriodo}"
+				var="notificacao" border="3" class="table-notificacoes">
+				<h:column>
+					<f:facet name="header">Título</f:facet>
+						#{notificacao.titulo}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Mensagem</f:facet>
+						#{notificacao.mensagem}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Data</f:facet>
+						#{notificacao.data}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Período</f:facet>
+						#{notificacao.periodo}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Prof/Coor</f:facet>
+						#{notificacao.prof.nome}
+						#{notificacao.coor.nome}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Operações</f:facet>
+					<h:commandButton value="Editar" class="btn btn-primary"
+						action="#{notificacaoControlador.editarComoCoordenador(notificacao)}" />
+					<h:commandButton value="Excluir" class="btn btn-primary"
+						action="#{notificacaoControlador.excluirComoCoordenador(notificacao)}" />					
+				</h:column>			
+	
+			</h:dataTable>
+	
+		</h:form>
+	
+	</h:body>
 </html>

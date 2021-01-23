@@ -12,7 +12,6 @@ public class NotificacaoConversor implements Converter {
 
 	NotificacaoGerente ng = new NotificacaoGerente();
 	
-	@Override
 	public Object getAsObject(FacesContext context, 
 			UIComponent component, String value) {
 		if(value == null || value.isEmpty())
@@ -20,14 +19,13 @@ public class NotificacaoConversor implements Converter {
 		return ng.recuperar(Long.valueOf(value));
 	}
 
-	@Override
 	public String getAsString(FacesContext context, 
 			UIComponent component, Object value) {
 		if(value == null || !(value instanceof Notificacao))
 			return "";		// AQUI ESTAVA O GARGALO!
-//			return null; 	// ANTES RETORNÁVAMOS null,
+//			return null; 	// ANTES RETORNÃ�VAMOS null,
 //							// ISSO ESTAVA GERANDO O PROBLEMA! 
-//							// NA PROXIMA AULA, PERGUNTEM O PORQUÊ?
+//							// NA PROXIMA AULA, PERGUNTEM O PORQUÃŠ?
 		return String.valueOf(((Notificacao)value).getId());
 	}
 

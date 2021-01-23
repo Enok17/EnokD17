@@ -5,49 +5,88 @@
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:f="http://java.sun.com/jsf/core">
 	  
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
-</h:head>
-<h:body>
-
-	<h1>Página do Coordenador</h1>
-	<h2>Inclusão de Disciplinas</h2>
-
-	<h:form>
-		<h:panelGrid columns="3">
-			
-			<h:outputLabel value="Nome:" for="nome" />
-			<h:inputText id= "nome"
-				value="#{disciplinaControlador.disciplina.nome}" required="true" 
-				requiredMessage="Nome é obrigatório!" >
-			</h:inputText>
-			
-			<h:message for="nome" />
-			
-			<h:outputLabel value="Professor:" for="prof" />
-			<h:selectOneMenu id="prof" 
-				value="#{disciplinaControlador.disciplina.prof}"
-				required="true" converter="professorConversor"
-				requiredMessage="Professor é obrigatório!"
-				converterMessage="Erro na conversão">
-				<f:selectItem noSelectionOption="true" itemLabel="--Selecione--"/>
-				<f:selectItems value="#{disciplinaControlador.professores}" var="prof"
-					itemValue="#{prof}"
-					itemLabel="#{prof.nome}"/>
-			</h:selectOneMenu>	
-			
-			<h:message for="prof" />
-			
-		</h:panelGrid>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>MURAL</title>
 		
-		<h:commandButton value="Confirmar" 
-			action="#{disciplinaControlador.adicionar}" />
-		<h:commandButton value="Cancelar" 
-			action="disciplinasGerenciamento" immediate="true" />
+		<style>
+			html {
+				font-family: Arial, Helvetica, sans-serif;
+			}
 			
-	</h:form>
-
-
-</h:body>
+			.titulo {
+				text-align: center;
+				font-size: 64px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			
+			.subtitulo {
+				text-align: center;
+				font-size: 32px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			
+			.card {
+				margin-left: 400px;
+				padding: 10px;
+			}
+			.btn {
+			margin: 10px
+			}
+		</style>
+	
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+		crossorigin="anonymous" />
+		
+	</h:head>
+	<h:body>
+	
+		<h1 class="titulo">Página do Coordenador</h1>
+		<h2 class="subtitulo">Inclusão de Disciplinas</h2>
+		
+		<div class="card" style="width: 32rem;">
+			<h:form>
+				<h:panelGrid columns="3">
+					
+					<h:outputLabel value="Nome:" for="nome" class="form-label" />
+					<h:inputText id= "nome" class="form-control form"
+						value="#{disciplinaControlador.disciplina.nome}" required="true" 
+						requiredMessage="Nome é obrigatório!" >
+					</h:inputText>
+					
+					<h:message for="nome" />
+					
+					<h:outputLabel value="Professor:" for="prof" class="form-label" />
+					<h:selectOneMenu id="prof" class="form-control form"
+						value="#{disciplinaControlador.disciplina.prof}"
+						required="true" converter="professorConversor"
+						requiredMessage="Professor é obrigatório!"
+						converterMessage="Erro na conversão">
+						<f:selectItem noSelectionOption="true" itemLabel="--Selecione--"/>
+						<f:selectItems value="#{disciplinaControlador.professores}" var="prof"
+							itemValue="#{prof}"
+							itemLabel="#{prof.nome}"/>
+					</h:selectOneMenu>	
+					
+					<h:message for="prof" />
+					
+				</h:panelGrid>
+				
+				<h:commandButton class="btn btn-primary" value="Confirmar" 
+					action="#{disciplinaControlador.adicionar}" />
+				<h:commandButton class="btn btn-primary" value="Cancelar" 
+					action="disciplinasGerenciamento" immediate="true" />
+					
+			</h:form>
+		</div>
+	
+	
+	</h:body>
 </html>

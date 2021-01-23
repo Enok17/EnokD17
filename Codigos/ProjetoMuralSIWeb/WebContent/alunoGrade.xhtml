@@ -4,64 +4,126 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
-</h:head>
-<h:body>
-
-	<h1>Página do Aluno</h1>
-	<h2>Grade Curricular</h2>
-	<h3>#{alunoControlador.aluno.nome}</h3>
-
-	<h:form>
-
-		<h:outputLabel value="Chave:" for="chave" />
-		<h:inputText id="chave" value="#{gradeCurricularControlador.chave}" />
-
-		<h:outputLabel value="Período:" for="chaveP" />
-		<h:selectOneMenu id="chaveP" value="#{gradeCurricularControlador.chaveP}">
-			<f:selectItem itemValue="1" itemLabel="1º" />
-			<f:selectItem itemValue="2" itemLabel="2º" />
-			<f:selectItem itemValue="3" itemLabel="3º" />
-			<f:selectItem itemValue="4" itemLabel="4º" />
-			<f:selectItem itemValue="5" itemLabel="5º" />
-			<f:selectItem itemValue="6" itemLabel="6º" />
-			<f:selectItem itemValue="7" itemLabel="7º" />
-			<f:selectItem itemValue="8" itemLabel="8º" />
-		</h:selectOneMenu>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>MURAL</title>
 		
-		<h:commandButton action="null" value="Buscar" />
-
-		<h:commandButton value="Voltar" action="alunoPrincipal" />
-
-		<h:dataTable value="#{gradeCurricularControlador.grade}"
-			var="grade" border="3">
-			<h:column>
-				<f:facet name="header">Código</f:facet>
-					#{grade.codigo}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Nome</f:facet>
-					#{grade.nome}
-			</h:column>
-			<h:column>
-				<f:facet name="header">CH</f:facet>
-					#{grade.cargaHoraria}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Pré-Requisito</f:facet>
-					#{grade.preRequisito}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Período</f:facet>
-					#{grade.periodo}
-			</h:column>
-
-		</h:dataTable>
-
-	</h:form>
-
-
-</h:body>
+		<style>
+			html {
+    			font-family: Arial, Helvetica, sans-serif;
+			}
+			.btn{
+			    margin: 0 0 2px 10px;
+			}
+			.titulo{
+			    text-align: center;
+			    font-size: 64px;
+			    color: #0d6efd;
+			    margin-top: 30px;
+			    margin-bottom: 30px;
+			}
+			.subtitulo {
+				text-align: center;
+				font-size: 32px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			.card {
+				margin-bottom: 10px;
+			}
+			.form{
+				margin-left: 10px;
+			}
+			.table-grade{
+			    border-collapse: collapse;
+			    width: 90%;
+			    margin: auto;
+			}
+			.table-grade th{
+			    background-color: #0d6efd;
+			    border:  solid 1.5px #fff;
+			    color: #fff;
+			    padding: 15px;
+			}
+			
+			.table-grade td{
+			    background-color: #fff;
+			    border: solid 1px #0d6efd;
+			    color: #0d6efd;
+			    text-align: center;
+			    padding: 10px;
+			}
+		</style>
+		
+		<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+		crossorigin="anonymous" />
+		
+	</h:head>
+	<h:body>
+	
+		<h1 class="titulo">Página do Aluno</h1>
+		<h2 class="subtitulo">Grade do Curso</h2>
+		<div class="card" style="width: 18rem;">
+		  <div class="card-body">
+		    <p class="card-text">#{alunoControlador.aluno.nome}</p>
+		  </div>
+		</div>
+	
+	
+		<h:form>
+			
+			<center>
+				<h:outputLabel value="Chave:" for="chave" class="form-label form" />
+				<h:inputText id="chave" value="#{gradeCurricularControlador.chave}"/>
+		
+				<h:outputLabel value="Período:" for="chaveP" class="form-label form" />
+				<h:selectOneMenu id="chaveP" value="#{gradeCurricularControlador.chaveP}" class="btn btn-primary">
+					<f:selectItem itemValue="1" itemLabel="1º" />
+					<f:selectItem itemValue="2" itemLabel="2º" />
+					<f:selectItem itemValue="3" itemLabel="3º" />
+					<f:selectItem itemValue="4" itemLabel="4º" />
+					<f:selectItem itemValue="5" itemLabel="5º" />
+					<f:selectItem itemValue="6" itemLabel="6º" />
+					<f:selectItem itemValue="7" itemLabel="7º" />
+					<f:selectItem itemValue="8" itemLabel="8º" />
+				</h:selectOneMenu>
+				
+				<h:commandButton action="null" value="Buscar" class="btn btn-primary" />
+		
+				<h:commandButton value="Voltar" action="alunoPrincipal" class="btn btn-primary" />
+			</center>
+	
+			<h:dataTable value="#{gradeCurricularControlador.grade}"
+				var="grade" border="3" class="table-grade">
+				<h:column>
+					<f:facet name="header">Código</f:facet>
+						#{grade.codigo}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+						#{grade.nome}
+				</h:column>
+				<h:column>
+					<f:facet name="header">CH</f:facet>
+						#{grade.cargaHoraria}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Pré-Requisito</f:facet>
+						#{grade.preRequisito}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Período</f:facet>
+						#{grade.periodo}
+				</h:column>
+	
+			</h:dataTable>
+	
+		</h:form>
+	
+	
+	</h:body>
 </html>

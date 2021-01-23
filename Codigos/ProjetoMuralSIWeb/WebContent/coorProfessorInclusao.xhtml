@@ -6,63 +6,102 @@
 	  xmlns:f="http://java.sun.com/jsf/core">
 	  <!--xmlns:p="http://primefaces.org/ui"> -->
 	  
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
-</h:head>
-<h:body>
-
-	<h1>Página do Coordenador</h1>
-	<h2>Cadastro de Professores</h2>
-
-	<h:form>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>MURAL</title>
 		
-		<h:panelGrid columns="3">
+		<style>
+			html {
+				font-family: Arial, Helvetica, sans-serif;
+			}
 			
-			<h:outputLabel value="Nome:" for="nome" />
-			<h:inputText id= "nome"
-				value="#{professorControlador.professor.nome}" required="true" 
-				requiredMessage="Nome é obrigatório!" >
-			</h:inputText>
+			.titulo {
+				text-align: center;
+				font-size: 64px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
 			
-			<h:message for="nome" />
+			.subtitulo {
+				text-align: center;
+				font-size: 32px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
 			
-				<h:outputLabel value="Curso:" for="curso" />
-			<h:inputText id= "curso"
-				value="#{professorControlador.professor.curso}">
-			</h:inputText>
-			
-			<h:message for="curso"/>
-			
-		</h:panelGrid>
-		
-		<h:outputLabel value="Dados Usados no Login:" />
-		
-		<h:panelGrid columns="3">
-		
-			<h:outputLabel value="Identificador" for="identificador" />
-			<h:inputText id="identificador" 
-				value="#{professorControlador.professor.identificador}" required="true" 
-				requiredMessage="Identificador é obrigatório!"/>
-				
-			<h:message for="identificador" />
-			
-			<h:outputLabel value="Senha:" for="senha" />
-			<h:inputText id="senha" 
-				value="#{professorControlador.professor.senha}" required="true" 
-				requiredMessage="Senha é obrigatório!"/>
-				
-			<h:message for="senha" />
-			
-		</h:panelGrid>
+			.card {
+				margin-left: 400px;
+				padding: 10px;
+			}
+			.btn {
+			margin: 10px
+			}
+		</style>
 	
-		<h:commandButton value="Confirmar" 
-			action="#{professorControlador.adicionar}" />
-		<h:commandButton value="Cancelar" 
-			action="professoresGerenciamento" immediate="true" />
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+		crossorigin="anonymous" />
+		
+	</h:head>
+	<h:body>
 	
-	</h:form>
-
-
-</h:body>
+		<h1 class="titulo">Página do Coordenador</h1>
+		<h2 class="subtitulo">Cadastro de Professores</h2>
+	
+		<div class="card" style="width: 32rem;">
+			<h:form>
+				
+				<h:panelGrid columns="3">
+					
+					<h:outputLabel value="Nome:" for="nome" class="form-label" />
+					<h:inputText id= "nome" class="form-control form"
+						value="#{professorControlador.professor.nome}" required="true" 
+						requiredMessage="Nome é obrigatório!" >
+					</h:inputText>
+					
+					<h:message for="nome" />
+					
+						<h:outputLabel value="Curso:" for="curso" class="form-label" />
+					<h:inputText id= "curso" class="form-control form"
+						value="#{professorControlador.professor.curso}">
+					</h:inputText>
+					
+					<h:message for="curso"/>
+					
+				</h:panelGrid>
+				
+				<h:outputLabel value="Dados Usados no Login:" class="form-label" />
+				
+				<h:panelGrid columns="3">
+				
+					<h:outputLabel value="Identificador:" for="identificador" class="form-label" />
+					<h:inputText id="identificador" class="form-control form"
+						value="#{professorControlador.professor.identificador}" required="true" 
+						requiredMessage="Identificador é obrigatório!"/>
+						
+					<h:message for="identificador" />
+					
+					<h:outputLabel value="Senha:" for="senha" class="form-label" />
+					<h:inputText id="senha" class="form-control form"
+						value="#{professorControlador.professor.senha}" required="true" 
+						requiredMessage="Senha é obrigatório!"/>
+						
+					<h:message for="senha" />
+					
+				</h:panelGrid>
+			
+				<h:commandButton class="btn btn-primary" value="Confirmar" 
+					action="#{professorControlador.adicionar}" />
+				<h:commandButton class="btn btn-primary" value="Cancelar" 
+					action="professoresGerenciamento" immediate="true" />
+			
+			</h:form>
+		</div>
+	
+	
+	</h:body>
 </html>

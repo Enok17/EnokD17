@@ -6,74 +6,112 @@
 	  xmlns:f="http://java.sun.com/jsf/core">
 	  <!--xmlns:p="http://primefaces.org/ui"> -->
 	  
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MURAL SI</title>
-</h:head>
-<h:body>
-
-	<h1>Página do Coordenador</h1>
-	<h2>Edição na Grade Curricular</h2>
-
-	<h:form>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>MURAL</title>
 		
-		<h:panelGrid columns="3">
+		<style>
+			html {
+				font-family: Arial, Helvetica, sans-serif;
+			}
 			
-			<h:outputLabel value="Código:" for="codigo" />
-			<h:inputText id= "codigo"
-				value="#{gradeCurricularControlador.gradeCurricular.codigo}" required="true" 
-				requiredMessage="Código é obrigatório!">
-			</h:inputText>
+			.titulo {
+				text-align: center;
+				font-size: 64px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
 			
-			<h:message for="codigo" />
+			.subtitulo {
+				text-align: center;
+				font-size: 32px;
+				color: #0d6efd;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
 			
-			<h:outputLabel value="Nome:" for="nome" />
-			<h:inputText id= "nome"
-				value="#{gradeCurricularControlador.gradeCurricular.nome}" required="true"
-				requiredMessage="Nome é obrigatório!">
-			</h:inputText>
-			
-			<h:message for="nome" />
-			
-			<h:outputLabel value="Carga Horária:" for="cargaHoraria" />
-			<h:inputText id="cargaHoraria" 
-				value="#{gradeCurricularControlador.gradeCurricular.cargaHoraria}" required="true" 
-				requiredMessage="Carga horária é obrigatório!"/>
-				
-			<h:message for="cargaHoraria" />
-			
-			<h:outputLabel value="Pré-Requisito:" for="preRequisito" />
-			<h:inputText id="preRequisito" 
-				value="#{gradeCurricularControlador.gradeCurricular.preRequisito}"/>
-				
-			<h:message for="preRequisito" />
-			
-			<h:outputLabel value="Período:" for="periodo" />
-			<h:selectOneMenu id= "periodo"
-				value="#{gradeCurricularControlador.gradeCurricular.periodo}" required="true" 
-				requiredMessage="Período é obrigatório!" >
-				<f:selectItem noSelectionOption="true" itemLabel="--Selecione--" />
-				<f:selectItem itemValue="1" itemLabel="1º" />
-				<f:selectItem itemValue="2" itemLabel="2º" />
-				<f:selectItem itemValue="3" itemLabel="3º" />
-				<f:selectItem itemValue="4" itemLabel="4º" />
-				<f:selectItem itemValue="5" itemLabel="5º" />
-				<f:selectItem itemValue="6" itemLabel="6º" />
-				<f:selectItem itemValue="7" itemLabel="7º" />
-				<f:selectItem itemValue="8" itemLabel="8º" />
-			</h:selectOneMenu>
-			
-			<h:message for="periodo"/>
-			
-		</h:panelGrid>
+			.card {
+				margin-left: 400px;
+				padding: 10px;
+			}
+			.btn {
+			margin: 10px
+			}
+		</style>
 	
-		<h:commandButton value="Confirmar" 
-			action="#{gradeCurricularControlador.atualizar}" />
-		<h:commandButton value="Cancelar" 
-			action="gradeGerenciamento" immediate="true" />
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+		crossorigin="anonymous" />
+		
+	</h:head>
+	<h:body>
 	
-	</h:form>
-
-
-</h:body>
+		<h1 class="titulo">Página do Coordenador</h1>
+		<h2 class="subtitulo">Edição na Grade Curricular</h2>
+	
+		<div class="card" style="width: 32rem;">
+			<h:form>
+				<h:panelGrid columns="3">
+					
+					<h:outputLabel value="Código:" for="codigo" class="form-label" />
+					<h:inputText id= "codigo" class="form-control form"
+						value="#{gradeCurricularControlador.gradeCurricular.codigo}" required="true" 
+						requiredMessage="Código é obrigatório!">
+					</h:inputText>
+					
+					<h:message for="codigo" />
+					
+					<h:outputLabel value="Nome:" for="nome" class="form-label" />
+					<h:inputText id= "nome" class="form-control form"
+						value="#{gradeCurricularControlador.gradeCurricular.nome}" required="true"
+						requiredMessage="Nome é obrigatório!">
+					</h:inputText>
+					
+					<h:message for="nome" />
+					
+					<h:outputLabel value="Carga Horária:" for="cargaHoraria" class="form-label" />
+					<h:inputText id="cargaHoraria" class="form-control form"
+						value="#{gradeCurricularControlador.gradeCurricular.cargaHoraria}" required="true" 
+						requiredMessage="Carga horária é obrigatório!"/>
+						
+					<h:message for="cargaHoraria" />
+					
+					<h:outputLabel value="Pré-Requisito:" for="preRequisito" class="form-label" />
+					<h:inputText id="preRequisito" class="form-control form"
+						value="#{gradeCurricularControlador.gradeCurricular.preRequisito}"/>
+						
+					<h:message for="preRequisito" />
+					
+					<h:outputLabel value="Período:" for="periodo" class="form-label" />
+					<h:selectOneMenu id= "periodo" class="form-control form"
+						value="#{gradeCurricularControlador.gradeCurricular.periodo}" required="true" 
+						requiredMessage="Período é obrigatório!" >
+						<f:selectItem noSelectionOption="true" itemLabel="--Selecione--" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<f:selectItem itemValue="3" itemLabel="3º" />
+						<f:selectItem itemValue="4" itemLabel="4º" />
+						<f:selectItem itemValue="5" itemLabel="5º" />
+						<f:selectItem itemValue="6" itemLabel="6º" />
+						<f:selectItem itemValue="7" itemLabel="7º" />
+						<f:selectItem itemValue="8" itemLabel="8º" />
+					</h:selectOneMenu>
+					
+					<h:message for="periodo"/>
+					
+				</h:panelGrid>
+			
+				<h:commandButton class="btn btn-primary" value="Confirmar" 
+					action="#{gradeCurricularControlador.atualizar}" />
+				<h:commandButton class="btn btn-primary" value="Cancelar" 
+					action="gradeGerenciamento" immediate="true" />
+			
+			</h:form>
+		</div>
+	
+	
+	</h:body>
 </html>
