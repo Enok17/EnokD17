@@ -1,5 +1,7 @@
 package br.ufac.si.muralSI.entidades;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -24,17 +26,24 @@ public class Aluno {
 	private String matricula; //Usado para fazer login no aluno
 	@Column(nullable=false, length=50)
 	private String nome;
-	@Column(nullable=false)
-	private int periodo;
+	@ManyToOne()
+	@JoinColumn(name="curso_fk", nullable=false)
+	private Curso curso;
 	@Column(nullable=false, length=20)
 	private String senha;
+	@ManyToMany(mappedBy= "alunos")
+	@Column(name="turma_fk", nullable=true)
+	private List<Turma> turmas;
 	
-	public Aluno(String matricula, String nome, int periodo, String senha) {
+	
+	
+	public Aluno(String matricula, String nome, Curso curso, String senha, List<Turma> turmas) {
 		super();
 		this.matricula = matricula;
 		this.nome = nome;
-		this.periodo = periodo;
+		this.curso = curso;
 		this.senha = senha;
+		this.turmas = turmas;
 	}
 	
 	public Aluno() {
@@ -43,6 +52,10 @@ public class Aluno {
 
 	public long getId() {
 		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getMatricula() {
@@ -61,12 +74,12 @@ public class Aluno {
 		this.nome = nome;
 	}
 
-	public int getPeriodo() {
-		return periodo;
+	public Curso getCurso() {
+		return curso;
 	}
 
-	public void setPeriodo(int periodo) {
-		this.periodo = periodo;
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
 
 	public String getSenha() {
@@ -75,6 +88,14 @@ public class Aluno {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public List<Turma> getTurmas() {
+		return turmas;
+	}
+
+	public void setTurmas(List<Turma> turmas) {
+		this.turmas = turmas;
 	}
 	
 }

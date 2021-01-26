@@ -55,6 +55,11 @@ public class ProfessorGerente{
 				.setParameter("termo", termo).getResultList();
 	}
 	
+	public List<Professor> recuperarPorCentro(String termo){
+		return em.createNamedQuery("Professor.todosPorCentro")
+				.setParameter("termo", termo).getResultList();
+	}
+	
 	public void encerrar() {
 		em.close();
 		emf.close();

@@ -26,59 +26,60 @@ public class AlunoControlador {
 		return "alunoInclusao";
 	}
 	
-	public String incluirComoCoordenador() {
-		this.aluno = new Aluno();
-		return "coorAlunoInclusao";
-	}
+//	public String incluirComoCoordenador() {
+//		this.aluno = new Aluno();
+//		return "coorAlunoInclusao";
+//	}
 	
 	public String editar(Aluno aluno) {
 		this.aluno = aluno;
 		return "alunoEdicao";
 	}
 	
-	public String editarComoCoordenador(Aluno aluno) {
-		this.aluno = aluno;
-		return "coorAlunoEdicao";
-	}
+//	public String editarComoCoordenador(Aluno aluno) {
+//		this.aluno = aluno;
+//		return "coorAlunoEdicao";
+//	}
 
 	public String excluir(Aluno aluno) {
 		this.aluno = aluno;
 		return "alunoExclusao";
 	}
 	
-	public String excluirComoCoordenador(Aluno aluno) {
-		this.aluno = aluno;
-		return "coorAlunoExclusao";
-	}
+//	public String excluirComoCoordenador(Aluno aluno) {
+//		this.aluno = aluno;
+//		return "coorAlunoExclusao";
+//	}
+	
 	public String adicionar() {
 		ag.adicionar(aluno);
 		return "alunoLogin";
 	}
 	
-	public String adicionarComoCoordenador() {
-		ag.adicionar(aluno);
-		return "alunosGerenciamento";
-	}
+//	public String adicionarComoCoordenador() {
+//		ag.adicionar(aluno);
+//		return "alunosGerenciamento";
+//	}
 	
 	public String atualizar() {
 		ag.atualizar(aluno);
 		return "alunoLogin";
 	}
 	
-	public String atualizarComoCoordenador() {
-		ag.atualizar(aluno);
-		return "alunosGerenciamento";
-	}
+//	public String atualizarComoCoordenador() {
+//		ag.atualizar(aluno);
+//		return "alunosGerenciamento";
+//	}
 	
 	public String remover() {
 		ag.remover(aluno);
 		return "alunoLogin";
 	}
 	
-	public String removerComoCoordenador() {
-		ag.remover(aluno);
-		return "alunosGerenciamento";
-	}
+//	public String removerComoCoordenador() {
+//		ag.remover(aluno);
+//		return "alunosGerenciamento";
+//	}
 
 	public Aluno getAluno() {
 		return aluno;

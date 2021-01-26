@@ -9,7 +9,9 @@ import javax.persistence.*;
 	@NamedQuery(name="GradeCurricular.todosPorNome",
 			query="SELECT gc FROM GradeCurricular gc ORDER BY gc.nome"),
 	@NamedQuery(name="GradeCurricular.todosPorNomeContendo",
-			query="SELECT gc FROM GradeCurricular gc WHERE gc.nome LIKE :termo1 AND gc.periodo=:termo2")
+			query="SELECT gc FROM GradeCurricular gc WHERE gc.nome LIKE :termo1 AND gc.periodo=:termo2"),
+	@NamedQuery(name="GradeCurricular.todosPorCurso",
+			query="SELECT gc FROM GradeCurricular gc WHERE gc.curso_fk = :termo")
 })
 
 @Table(name="gradeCurricular")
@@ -19,12 +21,26 @@ public class GradeCurricular {
 	
 	@Column(nullable=false, length=50)
 	private String nome;
+	@ManyToOne()
+	@JoinColumn(name="curso_fk", nullable=false)
+	private Curso curso;
 	@Column(nullable=false)
 	private int cargaHoraria;
 	@Column(nullable=true, length=24)
 	private String preRequisito;
 	@Column(nullable=false)
 	private int periodo;
+	
+	public GradeCurricular(String codigo, String nome, Curso curso, int cargaHoraria, String preRequisito,
+			int periodo) {
+		super();
+		this.codigo = codigo;
+		this.nome = nome;
+		this.curso = curso;
+		this.cargaHoraria = cargaHoraria;
+		this.preRequisito = preRequisito;
+		this.periodo = periodo;
+	}
 	
 	public GradeCurricular(String codigo, String nome, int cargaHoraria, String preRequisito, int periodo) {
 		super();
@@ -34,11 +50,10 @@ public class GradeCurricular {
 		this.preRequisito = preRequisito;
 		this.periodo = periodo;
 	}
-	
+
 	public GradeCurricular() {
 	}
 
-	
 	public String getCodigo() {
 		return codigo;
 	}
@@ -53,6 +68,14 @@ public class GradeCurricular {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Curso getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
 
 	public int getCargaHoraria() {
@@ -78,5 +101,5 @@ public class GradeCurricular {
 	public void setPeriodo(int periodo) {
 		this.periodo = periodo;
 	}
-	
+
 }

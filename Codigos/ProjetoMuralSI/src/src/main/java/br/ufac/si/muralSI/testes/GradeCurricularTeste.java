@@ -6,6 +6,9 @@ import br.ufac.si.muralSI.gerentes.*;
 public class GradeCurricularTeste {
 
 	public static void main(String[] args) {
+		
+		CursoGerente cg = new CursoGerente();
+		
 		GradeCurricularGerente gcg = new GradeCurricularGerente();
 		GradeCurricular g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15,
 		g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27, g28, g29, g30, g31,
@@ -13,72 +16,128 @@ public class GradeCurricularTeste {
 		g49, g50, g51, g52, g53, g54, g55, g56;
 
 		g1 = new GradeCurricular("CCET186", "Introdução à Informática", 60, "", 1);
+		g1.setCurso(cg.recuperar(1));
 		g2 = new GradeCurricular("CCET095", "Matemática Discreta", 60, "", 1);
+		g2.setCurso(cg.recuperar(1));
 		g3 = new GradeCurricular("CCET010", "Lógica para Computação", 60, "", 1);
+		g3.setCurso(cg.recuperar(1));
 		g4 = new GradeCurricular("CCJSA133", "Administração", 60, "", 1);
+		g4.setCurso(cg.recuperar(1));
 		g5 = new GradeCurricular("CELA465", "Leitura e Produção de Textos Técnicos", 30, "", 1);
+		g5.setCurso(cg.recuperar(1));
 		g6 = new GradeCurricular("CCET080", "Álgebra Linear", 60, "", 1);
+		g6.setCurso(cg.recuperar(1));
 		g7 = new GradeCurricular("CCET059", "Geometria Analítica", 60, "", 1);
+		g7.setCurso(cg.recuperar(1));
 		g8 = new GradeCurricular("CELA088", "Inglês Técnico", 60, "", 1);
+		g8.setCurso(cg.recuperar(1));
 		
 		g9 = new GradeCurricular("CCET007", "Tópicos de Cálculo I", 60, "CCET059", 2);
+		g9.setCurso(cg.recuperar(1));
 		g10 = new GradeCurricular("CCET005", "Algoritmos e Linguagem de Programação", 90, "CCET186", 2);
+		g10.setCurso(cg.recuperar(1));
 		g11 = new GradeCurricular("CCJSA134", "Comportamento Organizacional", 30, "CCJSA133", 2);
+		g11.setCurso(cg.recuperar(1));
 		g12 = new GradeCurricular("CCET090", "Teoria Geral de Sistemas", 60, "CCJSA133", 2);
+		g12.setCurso(cg.recuperar(1));
 		g13 = new GradeCurricular("CCET105", "Introdução à Pesquisa em Sistemas de Informação", 60, "", 2);
+		g13.setCurso(cg.recuperar(1));
 		
 		
 		g14 = new GradeCurricular("CCET114", "Linguagem de Programação I", 60, "CCET005", 3);
+		g14.setCurso(cg.recuperar(1));
 		g15 = new GradeCurricular("CCET178", "Arquitetura e Organização de Computador", 90, "CCET186 CCET010", 3);
+		g15.setCurso(cg.recuperar(1));
 		g16 = new GradeCurricular("CCJSA136", "Economia e Finanças", 60, "", 3);
+		g16.setCurso(cg.recuperar(1));
 		g17 = new GradeCurricular("CCET143", "Fundamentos de Sistemas de Informação", 30, "CCET090", 3);
+		g17.setCurso(cg.recuperar(1));
 		g18 = new GradeCurricular("CCJSA143", "Marketing", 30, "", 3);
+		g18.setCurso(cg.recuperar(1));
 		g19 = new GradeCurricular("CCET028", "Tópicos de Cálculo II", 60, "CCET007", 3);
+		g19.setCurso(cg.recuperar(1));
 		
 		g20 = new GradeCurricular("CCJSA138", "Organização, Sistemas e Métodos", 30, "CCJSA134", 4);
+		g20.setCurso(cg.recuperar(1));
 		g21 = new GradeCurricular("CCET115", "Linguagem de Programação II", 60, "CCET114", 4);
+		g21.setCurso(cg.recuperar(1));
 		g22 = new GradeCurricular("CCET130", "Estrutura de Dados", 60, "CCET005", 4);
+		g22.setCurso(cg.recuperar(1));
 		g23 = new GradeCurricular("CCET182", "Sistemas Operacionais", 60, "", 4);
+		g23.setCurso(cg.recuperar(1));
 		g24 = new GradeCurricular("CCET192", "Estatística Computacional", 60, "CCET007", 4);
+		g24.setCurso(cg.recuperar(1));
 		g25 = new GradeCurricular("CCET202", "Sistemas de Apoio à Decisão", 30, "", 4);
+		g25.setCurso(cg.recuperar(1));
 		g26 = new GradeCurricular("CFCH243", "Psicologia Aplicada", 30, "", 4);
+		g26.setCurso(cg.recuperar(1));
 		g27 = new GradeCurricular("CCET197", "Informática e Sociedade", 30, "", 4);
+		g27.setCurso(cg.recuperar(1));
 		
 		g28 = new GradeCurricular("CCET023", "Banco de dados I", 60, "CCET130", 5);
+		g28.setCurso(cg.recuperar(1));
 		g29 = new GradeCurricular("CCET020", "Pesquisa Operacional", 60, "CCET080 CCET007", 5);
+		g29.setCurso(cg.recuperar(1));
 		g30 = new GradeCurricular("CCET025", "Comunicação e Redes de Computadores", 60, "", 5);
+		g30.setCurso(cg.recuperar(1));
 		g31 = new GradeCurricular("CCET035", "Fundamentos da Computação", 60, "", 5);
+		g31.setCurso(cg.recuperar(1));
 		g32 = new GradeCurricular("CCJSA129", "Contabilidade e Custos", 30, "", 5);
+		g32.setCurso(cg.recuperar(1));
 		g33 = new GradeCurricular("CCET036", "Tópicos Especiais em Sistemas de Informação I", 60, "", 5);
+		g33.setCurso(cg.recuperar(1));
 		
 		
 		g34 = new GradeCurricular("CFCH087", "Sociologia", 30, "", 6);
+		g34.setCurso(cg.recuperar(1));
 		g35 = new GradeCurricular("CCET206", "Produção e Operações Logísticas", 60, "", 6);
+		g35.setCurso(cg.recuperar(1));
 		g36 = new GradeCurricular("CCET212", "Banco de Dados II", 60, "CCET023", 6);
+		g36.setCurso(cg.recuperar(1));
 		g37 = new GradeCurricular("CCET208", "Projetos de Sistemas de Informação", 60, "", 6);
+		g37.setCurso(cg.recuperar(1));
 		g38 = new GradeCurricular("CCET213", "Redes de Computadores", 60, "CCET025", 6);
+		g38.setCurso(cg.recuperar(1));
 		g39 = new GradeCurricular("CCET209", "Gerência de Projetos", 30, "", 6);
+		g39.setCurso(cg.recuperar(1));
 		g40 = new GradeCurricular("CCET204", "Engenharia de Software I", 60, "CCET023", 6);
+		g40.setCurso(cg.recuperar(1));
 		g41 = new GradeCurricular("CCET050", "Tópicos Especiais em Sistemas de Informação II", 60, "", 6);
+		g41.setCurso(cg.recuperar(1));
 		
 		
 		g42 = new GradeCurricular("CCET086", "Sistemas Distribuídos", 60, "CCET213", 7);
+		g42.setCurso(cg.recuperar(1));
 		g43 = new GradeCurricular("CCET207", "Engenharia Software II", 60, "CCET204", 7);
+		g43.setCurso(cg.recuperar(1));
 		g44 = new GradeCurricular("CCET214", "Interface Homem Máquina", 60, "CCET204", 7);
+		g44.setCurso(cg.recuperar(1));
 		g45 = new GradeCurricular("CCET106", "Ética e Legislação Aplicada à Informática", 30, "", 7);
+		g45.setCurso(cg.recuperar(1));
 		g46 = new GradeCurricular("CCET217", "Planos de Negócios em Informática", 30, "", 7);
+		g46.setCurso(cg.recuperar(1));
 		g47 = new GradeCurricular("CCET219", "Introdução a Inteligência Artificial", 60, "CCET010", 7);
+		g47.setCurso(cg.recuperar(1));
 		g48 = new GradeCurricular("CCET175", "Estágio Supervisionado", 150, "", 7);
+		g48.setCurso(cg.recuperar(1));
 		g49 = new GradeCurricular("CCET177", "TCC I", 30, "", 7);
+		g49.setCurso(cg.recuperar(1));
 		
 		
 		g50 = new GradeCurricular("CCET183", "Gestão da Informação", 60, "", 8);
+		g50.setCurso(cg.recuperar(1));
 		g51 = new GradeCurricular("CCET189", "Segurança e Auditoria de Sistemas", 60, "", 8);
+		g51.setCurso(cg.recuperar(1));
 		g52 = new GradeCurricular("CCET201", "Sistemas Multimídia", 60, "", 8);
+		g52.setCurso(cg.recuperar(1));
 		g53 = new GradeCurricular("CCJSA139", "Empreendedorismo", 30, "", 8);
+		g53.setCurso(cg.recuperar(1));
 		g54 = new GradeCurricular("CCET222", "Gerência de Redes", 60, "CCET213", 8);
+		g54.setCurso(cg.recuperar(1));
 		g55 = new GradeCurricular("CCET121", "Relatório de Estágio", 30, "CCET175", 8);
+		g55.setCurso(cg.recuperar(1));
 		g56 = new GradeCurricular("CCET179", "TCC II", 90, "CCET177", 8);		
+		g56.setCurso(cg.recuperar(1));
 		
 		gcg.adicionar(g1);
 		gcg.adicionar(g2);

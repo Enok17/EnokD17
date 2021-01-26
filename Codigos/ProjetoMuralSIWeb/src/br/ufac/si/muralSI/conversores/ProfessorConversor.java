@@ -22,10 +22,9 @@ public class ProfessorConversor implements Converter {
 	public String getAsString(FacesContext context, 
 			UIComponent component, Object value) {
 		if(value == null || !(value instanceof Professor))
-			return "";		// AQUI ESTAVA O GARGALO!
-//			return null; 	// ANTES RETORNÃ�VAMOS null,
-//							// ISSO ESTAVA GERANDO O PROBLEMA! 
-//							// NA PROXIMA AULA, PERGUNTEM O PORQUÃŠ?
+			return "";		
+//			return null; 	
+		
 		return String.valueOf(((Professor)value).getId());
 	}
 

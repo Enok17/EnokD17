@@ -11,7 +11,9 @@ import javax.persistence.*;
 	@NamedQuery(name="Professor.todosPorNomeContendo",
 			query="SELECT p FROM Professor p WHERE p.nome LIKE :termo ORDER BY p.nome"),
 	@NamedQuery(name="Professor.todosPorIdentificador",
-			query="SELECT p FROM Professor p WHERE p.identificador = :termo")
+			query="SELECT p FROM Professor p WHERE p.identificador = :termo"),
+	@NamedQuery(name="Professor.todosPorCentro",
+		query="SELECT p FROM Professor p WHERE p.centro = :termo")
 })
 
 @Table(name="professores")
@@ -24,16 +26,16 @@ public class Professor {
 	private String identificador; //usado para fazer login no professor
 	@Column(nullable=false, length=50)
 	private String nome;
-	@Column(nullable=true, length=30)
-	private String curso;
+	@Column(nullable=true, length=9)
+	private String centro;
 	@Column(nullable=false, length=20)
 	private String senha;
 	
-	public Professor(String identificador, String nome, String curso, String senha) {
+	public Professor(String identificador, String nome, String centro, String senha) {
 		super();
 		this.identificador = identificador;
 		this.nome = nome;
-		this.curso = curso;
+		this.centro = centro;
 		this.senha = senha;
 	}
 	
@@ -61,12 +63,12 @@ public class Professor {
 		this.nome = nome;
 	}
 
-	public String getCurso() {
-		return curso;
+	public String getCentro() {
+		return centro;
 	}
 
-	public void setCurso(String curso) {
-		this.curso = curso;
+	public void setCentro(String centro) {
+		this.centro = centro;
 	}
 
 	public String getSenha() {

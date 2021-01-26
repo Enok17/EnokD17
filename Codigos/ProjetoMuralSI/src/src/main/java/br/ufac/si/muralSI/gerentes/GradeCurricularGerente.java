@@ -4,6 +4,7 @@ import java.util.*;
 
 import javax.persistence.*;
 
+import br.ufac.si.muralSI.entidades.Aluno;
 import br.ufac.si.muralSI.entidades.GradeCurricular;
 
 public class GradeCurricularGerente{
@@ -21,8 +22,8 @@ public class GradeCurricularGerente{
 		em.getTransaction().commit();
 	}
 	
-	public GradeCurricular recuperar(long id) {
-		return em.find(GradeCurricular.class, id);
+	public GradeCurricular recuperar(String codigo) {
+		return em.find(GradeCurricular.class, codigo);
 	}
 	
 	public void atualizar(GradeCurricular gradeCurricular) {
@@ -50,6 +51,15 @@ public class GradeCurricularGerente{
 				.setParameter("termo1", "%"+termo1+"%")
 				.setParameter("termo2", termo2).getResultList();
 	}
+	
+	public List<GradeCurricular> recuperarPorCurso(long termo){
+		return em.createNamedQuery("GradeCurricular.todosPorCurso")
+				.setParameter("termo", termo).getResultList();
+	}
+	
+//	public List<GradeCurricular> recuperarTodosPorCurso(){
+//		return em.createNamedQuery("GradeCurricular.todosPorCurso").getResultList();
+//	}
 	
 	public void encerrar() {
 		em.close();

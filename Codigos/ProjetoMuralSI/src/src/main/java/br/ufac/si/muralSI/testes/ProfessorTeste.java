@@ -9,9 +9,9 @@ public class ProfessorTeste {
 		ProfessorGerente pg = new ProfessorGerente();
 		Professor p1, p2, p3;
 		
-		p1 = new Professor("234-P", "Macilon", "Sistemas de Informação", "1234");
-		p2 = new Professor("123-P", "Manoel", "Sistemas de Informação", "1234");
-		p3 = new Professor("345-P", "Claudionor", "Sistemas de Informação", "1234");
+		p1 = new Professor("234-P", "Macilon", "CCET", "1234");
+		p2 = new Professor("123-P", "Manoel", "CCET", "1234");
+		p3 = new Professor("345-P", "Claudionor", "CCET", "1234");
 		
 		pg.adicionar(p1);
 		pg.adicionar(p2);

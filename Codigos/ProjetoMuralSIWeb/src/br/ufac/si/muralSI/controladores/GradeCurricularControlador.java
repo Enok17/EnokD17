@@ -14,6 +14,7 @@ public class GradeCurricularControlador {
 	private GradeCurricular gradeCurricular;
 	private String chave = "";
 	private int chaveP = 1;
+	private long chaveC = 0;
 	
 	public GradeCurricularControlador() {
 		gcg = new GradeCurricularGerente();
@@ -62,6 +63,10 @@ public class GradeCurricularControlador {
 		return gcg.recuperarTodosPorNomeContendo(chave, chaveP);
 	}
 	
+	public List<GradeCurricular> getPorCurso(){
+		return gcg.recuperarPorCurso(chaveC);
+	}
+	
 	public String getChave() {
 		return chave;
 	}
@@ -76,6 +81,14 @@ public class GradeCurricularControlador {
 
 	public void setChaveP(int chaveP) {
 		this.chaveP = chaveP;
+	}
+
+	public long getChaveC() {
+		return chaveC;
+	}
+
+	public void setChaveC(long chaveC) {
+		this.chaveC = chaveC;
 	}
 	
 }

@@ -7,10 +7,10 @@ import javax.faces.convert.*;
 import br.ufac.si.muralSI.entidades.*;
 import br.ufac.si.muralSI.gerentes.*;
 
-@FacesConverter(value="notificacaoConversor", forClass=Notificacao.class)
-public class NotificacaoConversor implements Converter {
+@FacesConverter(value="notificacaoConversor", forClass=Aviso.class)
+public class AvisoConversor implements Converter {
 
-	NotificacaoGerente ng = new NotificacaoGerente();
+	AvisoGerente ng = new AvisoGerente();
 	
 	public Object getAsObject(FacesContext context, 
 			UIComponent component, String value) {
@@ -21,12 +21,11 @@ public class NotificacaoConversor implements Converter {
 
 	public String getAsString(FacesContext context, 
 			UIComponent component, Object value) {
-		if(value == null || !(value instanceof Notificacao))
-			return "";		// AQUI ESTAVA O GARGALO!
-//			return null; 	// ANTES RETORNÃ�VAMOS null,
-//							// ISSO ESTAVA GERANDO O PROBLEMA! 
-//							// NA PROXIMA AULA, PERGUNTEM O PORQUÃŠ?
-		return String.valueOf(((Notificacao)value).getId());
+		if(value == null || !(value instanceof Aviso))
+			return "";		
+//			return null; 	
+
+		return String.valueOf(((Aviso)value).getId());
 	}
 
 }
